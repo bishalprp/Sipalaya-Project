@@ -1,0 +1,37 @@
+{% extends 'profile_dashboard.html' %}
+{% load static %}
+
+{% block maincontent %}
+<div class="container-fluid">
+    <div class="card p-4">
+        <div class="row">
+            <div class="col-md-4">
+
+                {% if request.user.profile.profile_img %}
+
+                <img src="{{request.user.profile.profile_img.url}}" alt="Default Profile Image"
+                    style="width: 200px; height: 200px; padding: 20px; border-radius: 50%; object-fit: contain;">
+                {%else%}
+              
+                <img src="{% static 'images/IMG.jpg' %}" alt="Default Profile Image"
+                    style="width: 200px; height: 200px; padding: 20px; border-radius: 50%; object-fit: contain;">
+                    {% endif %}
+                    
+                <center>
+                    <p>Username: {{user}}</p>
+                    <a href="{% url 'update_profile' %}" class="btn btn-success ">Update
+                        Profile</a>
+                </center>
+
+            </div>
+
+            <div class=" col-md-8 mt-4">
+
+                <p> <strong>Fullname: </strong>{{user.first_name}} {{user.last_name}}</p>
+                <p> <strong>Email: {{user.email}}</strong> </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock maincontent %}

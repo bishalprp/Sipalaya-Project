@@ -1,0 +1,16 @@
+{% extends "profile_dashboard.html" %}
+
+{% block maincontent %}
+
+    <h1 class="text-center alert alert-success">Profile update form</h1>
+  
+    <form method="post" and enctype="multipart/form-data" action="{% url 'update_profile' %}">
+        {% csrf_token %}
+        {{form}}
+
+        <button>
+            <input type="submit" value="update">
+        </button>
+    </form>
+
+    {% endblock maincontent %}

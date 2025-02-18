@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container m-4">
+
+    {% for quiz in quizes %}
+    <div class="card p-4 mt-4">
+        <div class="row">
+            <div class="col">
+                <h3>{{ quiz.title }}</h3>
+                <p>{{ quiz.description|truncatewords:80 }}</p>
+
+                <a href="{% url 'show_quiz_question' quiz.id %}" class="btn btn-primary">Go to Quiz</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,71 @@
+{% extends 'profile_dashboard.html' %}
+
+{% load static %}
+
+{% block maincontent %}
+
+
+
+<div class="container mt-4 mb-4">
+    <h4 class="mx-2 my-4">Hi, {{user}}</h4>
+    <div class="card mx-2 p-4">
+        <div class="row">
+            <div class="col-lg-5 d-flex justify-content-md-center flex-column align-items-center">
+                <div class="profile_img">
+
+                    {% if request.user.profile.profile_img %}
+
+                <img src="{{request.user.profile.profile_img.url}}" alt="Default Profile Image"
+                    style="width: 200px; height: 200px; padding: 20px; border-radius: 50%; object-fit: contain;">
+                      
+                    {% endif %}
+                </div>
+
+                <h3>Fullname: {{user.first_name}} {{user.last_name}}</h3>
+                <p>Rank</p>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card text-white bg-primary mb-3" style="width: 100%;">
+                            <div class="card-header" style="min-height: 100px;">
+                                <h6 class="card-title text-center">Overall Question Attempts</h6>
+                            </div>
+                            <div class="card-body">
+
+                                <p class="card-text text-center" style="font-size: 4rem;">{{ total_questions }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6">
+                        <div class="card text-white bg-secondary mb-3" style="width: 100%;">
+                            <div class="card-header" style="min-height: 100px;">
+                                <h6 class="card-title text-center">Total Score</h6>
+                            </div>
+                            <div class="card-body">
+
+                                <p class="card-text text-center" style="font-size: 4rem;">{{ total_score }}
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"
+    integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+{% endblock %}

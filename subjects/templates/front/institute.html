@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block education %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="py-4">
+            <div class="flex border-b ">
+            <h1>
+                <a href="{% url 'skill' %}" class="px-4 py-2 hover:border-b-2 hover:border-pr hover:bg-gray-200  text-dark "> 
+                    Skills
+                </a>
+            </h1>
+            <h1>
+                <a href="{% url 'institute' %}" aria-current="page" class="border-b-2 border-pr text-pr router-link-exact-active px-4 py-2 hover:border-b-2 hover:border-pr hover:bg-gray-200 text-dark"> 
+                    Institutions
+                </a>
+            </h1>
+            </div>
+        </div>
+        
+        <!-- Courses Start -->
+         <!-- <div class="col-9"> -->
+            <div class="container-xxl py-5">
+                <div class="container">
+                    <div class="text-center wow fadeInUp" data-wow-delay="0.1s" id="skill">
+                        <h6 class="section-title bg-white text-center text-primary px-3">Institutes Offering Skill Based Courses</h6>
+                        <h1 class="mb-5"> in Nepal</h1>
+                    </div>
+                        
+                    <div class="row g-4 justify-content-centern d-flex">
+                        {% for p in inn %}
+                        <div class="col-3 wow fadeInUp" data-wow-delay="0.1s" id="institute">
+                            <a href="" class="text-dark">
+                                <div class="course-item bg-light skill" >
+                                    <div class="position-relative overflow-hidden">
+                                        <img class="img-fluid" src="{{p.Image.url}}" height="50px" width="300px" alt="">
+                                    </div>
+                                    <div class="text-center p-4 pb-0">
+                                        <h5 class="mb-4">{{p.Name}}</h5>
+                                        <ul class="flex flex-col rounded-r-2xl pt-4 text-sm text-gray-600">  
+                                    </div>
+                                    <div>
+                                        <li title="Address" class="mb-4 mt-2">
+                                            <span class="flex hover:text-gray-800">
+                                                <span class="inline-flex text-lg">
+                                                    <svg data-v-1b6428f3 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon" width="1em" height="1em" viewBox="0 0 256 256">
+                                                        <path fill="currentColor" d="M128 64a40 40 0 1 0 40 40a40 40 0 0 0-40-40m0 64a24 24 0 1 1 24-24a24 24 0 0 1-24 24m0-112a88.1 88.1 0 0 0-88 88c0 31.4 14.51 64.68 42 96.25a254.2 254.2 0 0 0 41.45 38.3a8 8 0 0 0 9.18 0a254.2 254.2 0 0 0 41.37-38.3c27.45-31.57 42-64.85 42-96.25a88.1 88.1 0 0 0-88-88m0 206c-16.53-13-72-60.75-72-118a72 72 0 0 1 144 0c0 57.23-55.47 105-72 118"></path>
+                                                    </svg>
+                                                </span>
+                                                <span class="ml-2">{{p.Location}}</span>
+                                            </span>
+                                        </li>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>over-18</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>under ...</small>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    
+                        {% endfor %}
+                    </div>
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            {% if inn.has_previous %}
+                      
+                            <li class="page-item ">
+                            <a class="page-link" href="?page={{inn.previous_page_number}} #institute">Previous</a>
+                          </li>
+                            {% endif %}
+                            {% for n in num %}
+                              
+                          <li class="page-item"><a class="page-link" href="?page={{n}} #institute">{{n}}</a></li>
+                          {% endfor %}
+
+                          {% if inn.has_next %}
+                            
+                          <li class="page-item">
+                            <a class="page-link" href="?page={{inn.next_page_number}} #institute">Next</a>
+                          </li>
+                          {% endif %}
+
+                        </ul>
+                      </nav>
+                </div>
+            </div>
+        <!-- </div> -->
+        <!-- Courses End -->
+    </div>
+    
+</div>
+
+{% endblock education %}

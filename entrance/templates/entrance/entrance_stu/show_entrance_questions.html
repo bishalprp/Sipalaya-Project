@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="my-4 text-center">{{ quiz.title }}</h2>
+        </div>
+    </div>
+
+    <!-- question -->
+    <form method="POST">
+        {% for item in question_with_options %}
+        <div class="card p-4 my-4">
+            <div class="row">
+                <div class="col">
+                    {% csrf_token %}
+                    <div>
+                        <h5> <span>{{ forloop.counter }}.</span> {{ item.question.question_text }}</h5>
+                        {% for option in item.options %}
+                        <label>
+                            <input type="radio" name="question_{{ item.question.id }}" value="{{ option.id }}">
+                            {{ option.option_text }}
+                        </label>
+                        <br>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary mb-4">Submit Quiz</button>
+    </form>
+</div>
+
+{% endblock %}

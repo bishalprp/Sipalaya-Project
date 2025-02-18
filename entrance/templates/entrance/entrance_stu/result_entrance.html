@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col d-flex justify-content-center align-items-center">
+            <div class="card my-4" style="width: 80%;">
+
+                <div class="card-header">
+                    <h2 class="my-2 text-center">Quiz Results</h2>
+                    <h3 class="text-center">{{ quiz.title }}</h3>
+
+                    <p>Total Question Attempts: {{ total_questions }}
+
+                    </p>
+                    <p> Incorrect Answers: {{ incorrect_answers }} </p>
+                    <p>Your score: {{ score }}</p>
+
+                </div>
+                <div class="card-body">
+                    <h4>Questions and Your Answers:</h4>
+                    <ul>
+                        {% for question in questions %}
+                        <li>
+                            <strong>{{ question.question_text }}</strong>
+                            <p>Answer: {{ question.correct_answer.answer_text }}</p>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <a href="{% url 'student_dashboard' %}" class="btn btn-outline-primary float-end ">See Your
+                        Progress</a>
+                    <a href="#" class="btn btn-outline-primary float-end mx-4">Try Again</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+{% endblock %}

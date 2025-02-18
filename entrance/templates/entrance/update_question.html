@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<div class="container">
+    <div class="card m-4 p-4">
+        <div class="row">
+
+            <div class="col-md-6">
+                <h3 class="text-center">{{ quiz.title }}</h3>
+                <form method="post">
+                    {% csrf_token %}
+
+                    <h4>Question</h4>
+                    {{ question_form.as_p }}
+                    <h4>Options</h4>
+                    {{ option_formset.management_form }}
+                    {% for form in option_formset %}
+                    {{ form.as_p }}
+                    {% endfor %}
+
+                    <h4>Correct Answer</h4>
+                    {{ answer_form.as_p }}
+
+                    <button type="submit" class="btn btn-primary">Create Question</button>
+                </form>
+
+                {% if question_form.errors %}
+                <div class="alert alert-danger mt-3">
+                    <strong>There were errors with the question form:</strong>
+                    <ul>
+                        {% for error in question_form.non_field_errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                        {% for field in question_form %}
+                        {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+                {% if option_formset.errors %}
+                <div class="alert alert-danger mt-3">
+                    <strong>There were errors with the options form:</strong>
+                    <ul>
+                        {% for form in option_formset %}
+                        {% for error in form.non_field_errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                        {% for field in form %}
+                        {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                        {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+                {% if answer_form.errors %}
+                <div class="alert alert-danger mt-3">
+                    <strong>There were errors with the answer form:</strong>
+                    <ul>
+                        {% for error in answer_form.non_field_errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                        {% for field in answer_form %}
+                        {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
