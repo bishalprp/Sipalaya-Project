@@ -53,7 +53,7 @@ EXTERNAL_APPS = [
     'msg',
     'subjects',
     'entrance',
-    'back',
+    'backwork',
     
 ]
 

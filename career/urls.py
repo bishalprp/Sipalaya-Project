@@ -27,8 +27,7 @@ urlpatterns = [
     path("msg/",include('msg.urls')),
     path("subjects/",include('subjects.urls')),
     path("entrance/",include('entrance.urls')),
-    path('back/',include('back.urls')),
-
+    path("backwork/", include('backwork.urls')),
 
     path('social-auth/', include('social_django.urls', namespace='social')),
     

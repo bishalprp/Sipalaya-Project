@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Bootstrap css/js link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+        
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="{% url 'index' %}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>Dream Success</h2>
+        </a>
+    </nav>
+
+    <div class="bg-gray-100">
+<img class="mh-300 w-full object-scale-down" alt="" src="" sizes="
+          (min-width: 1510px) 2000px,
+          (min-width: 1410px) 1500px,
+          (min-width: 1410px) 1500px,
+          (min-width: 1210px) 1400px,
+          (min-width: 910px) 1200px,
+          (min-width: 610px) 900px,
+          (min-width: 405px) 600px
+          100vw">
+    </div>
+</body>
+</html>

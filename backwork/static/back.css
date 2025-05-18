@@ -1,0 +1,91 @@
+.navbar-light .navbar-brand, .navbar-light a.btn {
+    height: 75px;
+}
+
+.bg-gray-100 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+}
+.w-full {
+    width: 100%;
+}
+.object-scale-down {
+    -o-object-fit: scale-down;
+    object-fit: scale-down;
+}
+.mh-300 {
+    max-height: 300px;
+}
+.z-20 {
+    z-index: 20;
+}
+.sticky {
+    position: sticky;
+}
+ 
+.con {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.grid {
+    display: grid;
+}
+.grid-cols-10 {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+.gap-2 {
+    gap: .5rem !important;
+}
+.shadow-xl {
+    --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 8px 10px -6px rgba(0, 0, 0, .1);
+    --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+}
+.col-span-2 {
+    grid-column: span 2 / span 2;
+}
+.text-center {
+    text-align: center !important;
+}
+.mb-1 {
+    margin-bottom: .25rem;
+}
+.max-h-48 {
+    max-height: 12rem;
+}
+.rounded-r-3xl {
+    border-bottom-right-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+}
+.p-4 {
+    padding: 1.5rem !important;
+}
+.leading-5 {
+    line-height: 1.25rem;
+}
+
+.py-4 {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+.pb-1 {
+    padding-bottom: .25rem;
+}
+.text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+.font-bold {
+    font-weight: 700;
+}
+.col-span-8 {
+    grid-column: span 8 / span 8;
+}
+.hidden {
+    display: none;
+}
+
+/* -------------------------------------------------------------------------------------------- */
+
